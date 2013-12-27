@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Catfish Triathlon
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{'data-user' => (current_user ? current_user.id : 0)}
+    %noscript
+      %p Javascript is required for this application
+
+    %section#app
+      = yield
